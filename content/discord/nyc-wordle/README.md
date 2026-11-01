@@ -5,7 +5,7 @@ Using Discord's New York Times Wordle activity, you can easily 'guess' the answe
 >If you dont want to be a boring, just play the game normally.
 
 >[!NOTE]
->This was last updated on 11/1/2026. Security and fairness changes could've been which could've made this method obsolete.
+>This was last updated on 11/1/2026. Security or fairness changes could've been made which could've made this method obsolete.
 
 
 ## Setup
