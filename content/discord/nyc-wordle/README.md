@@ -1,11 +1,11 @@
-# Move in one with Wordle.
+# Move in one with Discord's Wordle.
 Using Discord's New York Times Wordle activity, you can easily 'guess' the answer just by reading your incoming/outgoing requests.
 
 >[!TIP]
 >If you dont want to be a boring, just play the game normally.
 
 >[!NOTE]
->This was last updated on 11/1/2026. Security or fairness changes could've been made which could've made this method obsolete.
+>This was last updated on 11/1/2026. Security or fairness measures could've been made which could've made this method obsolete.
 
 
 ## Setup
@@ -59,6 +59,12 @@ Then run these commands in your command prompt.
 python
 ```
 
+<div align="center">
+
+_Refrenced from [./main.py](nyc-wordle\main.py)_
+
+</div>
+
 ``` python
 import json, urllib.request
 from datetime import date
@@ -73,3 +79,16 @@ solution = data['solution'].upper()
 
 print(f"Solution for today is \"{solution}\"")
 ```
+
+___
+
+## How could this be prevented and why prevent it?
+
+### Preventions
+- Do not send the answer to the client before the player has finished the game. Keep the answer server-side and validate guesses there; hiding the answer in a response or relying on client-side checks will not protect it.
+- Require a short-lived, authenticated game session and enforce per-session rate limits. An agent ID or [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) can help identify a session, but it is not secret and should not be treated as proof that a request is actually real.
+- Monitor for abuse using rate limits and other signals, such as repeated requests across accounts or IP addresses - detecting location differences prevents one key from being used universally. IP addresses can be shared or changed, so avoid relying on them as the only way to identify a player.
+
+### Reasons to Prevent It
+- If Wordle is used competitively, access to the answer before a player finishes makes it easy to cheat and gives those players an unfair advantage.
+- Even in a non-competitive setting, keeping the answer private until the game is over keeps the intended challenge and makes results more meaningful.
