@@ -61,7 +61,7 @@ python
 
 <div align="center">
 
-_Refrenced from [./main.py](nyc-wordle\main.py)_
+_Refrenced from [nyc-wordle/main.py](.\main.py)_
 
 </div>
 
